@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Class 12 Physics: Electric Charges & Fields. Full Chapter Notes for JEE/NEET.">
+    <title>Electric Charges & Fields | Draqonify</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <style>
+        /* --- CUSTOM STYLES FOR THIS CHAPTER --- */
+        
+        /* 1. Concept Tables */
+        .concept-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: var(--bg-card); border-radius: 8px; overflow: hidden;
+            border: 1px solid var(--border); font-size: 0.95rem;
+        }
+        .concept-table th { background: var(--primary); color: white; padding: 12px; text-align: left; }
+        .concept-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-main); }
+        .concept-table tr:last-child td { border-bottom: none; }
+        
+        /* 2. CSS Mind Map (Visual Tree) */
+        .mind-map {
+            display: flex; flex-direction: column; align-items: center; margin: 30px 0;
+            background: rgba(30, 136, 229, 0.05); padding: 20px; border-radius: 12px;
+            border: 1px dashed var(--primary);
+        }
+        .mm-center {
+            background: var(--primary); color: white; padding: 10px 20px;
+            border-radius: 50px; font-weight: bold; margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(30, 136, 229, 0.3);
+        }
+        .mm-branches {
+            display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+        }
+        .mm-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 8px 15px; border-radius: 8px; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .mm-item i { color: var(--accent); font-size: 1.1rem; margin: 0; }
+
+        /* 3. Story Box */
+        .story-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+            border-left: 4px solid #FF9800; padding: 15px; margin: 20px 0;
+            border-radius: 0 8px 8px 0; font-style: italic; color: #5d4037;
+        }
+        [data-theme="dark"] .story-box { background: linear-gradient(135deg, #3e2723 0%, #1e1e1e 100%); color: #d7ccc8; }
+        
+        /* 4. Rank Booster (JEE/NEET) */
+        .rank-booster {
+            border: 2px solid var(--accent); border-radius: 8px; margin: 25px 0;
+            overflow: hidden;
+        }
+        .rb-header {
+            background: var(--accent); color: #000; padding: 10px 15px;
+            font-weight: bold; display: flex; align-items: center; gap: 10px;
+        }
+        .rb-content { padding: 15px; background: var(--bg-card); }
+        .rb-content ul { padding-left: 20px; margin: 0; }
+        .rb-content li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="brand">DRAQONIFY</a>
+    <button id="theme-toggle" class="theme-toggle"><i class="ri-moon-line"></i></button>
+</nav>
+
+<main class="container">
+    <p style="color:var(--text-muted); font-size:0.9rem;">
+        <a href="../../class-12.html" style="color:var(--primary)">Class 12</a> > 
+        <a href="../physics.html" style="color:var(--primary)">Physics</a> > Electric Charges
+    </p>
+
+    <h1><i class="ri-flashlight-fill" style="color:#FFC107"></i> Electric Charges & Fields</h1>
+    <p class="lead">The "Soul" of Matter. Comprehensive Notes for Toppers.</p>
+
+    <h2 style="color:var(--primary)"><i class="ri-battery-charge-line"></i> 1. The Nature of Charge</h2>
+    <p>Charge is an intrinsic property. Like mass, but can be positive or negative.</p>
+    
+    <div class="story-box">
+        <strong><i class="ri-book-2-line"></i> The Memory Story: "The Franklin Party"</strong><br>
+        Imagine Benjamin Franklin hosting a party. When a Glass Rod danced with Silk, the Glass got tired (lost electrons, became +ve), and Silk gained energy (gained electrons, became -ve). The total number of guests never changed (Conservation)!
+    </div>
+
+    <h3 style="font-size:1.1rem; margin-top:20px;">Charge vs. Mass</h3>
+    <table class="concept-table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Electric Charge (q)</th>
+                <th>Mass (m)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Speed Effect</strong></td>
+                <td>Invariant (Constant)</td>
+                <td>Increases with Speed</td>
+            </tr>
+            <tr>
+                <td><strong>Force</strong></td>
+                <td>Attract or Repel</td>
+                <td>Always Attracts (Gravity)</td>
+            </tr>
+            <tr>
+                <td><strong>Quantization</strong></td>
+                <td>Yes (q = ne)</td>
+                <td>Not fully established</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <label class="topic-check">
+        <input type="checkbox"> <span><strong>Concept 1:</strong> Quantization (q=ne). Charge is grainy like sand, not continuous like water.</span>
+    </label>
+
+    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
+    <h2 style="color:var(--primary)"><i class="ri-magnet-line"></i> 2. Coulomb's Law</h2>
+    
+    <div style="background:var(--bg-card); padding:15px; border-radius:8px; border:1px solid var(--border); text-align:center;">
+        <strong style="font-size:1.2rem;">F = k q₁q₂ / r²</strong>
+    </div>
+
+    <div class="rank-booster">
+        <div class="rb-header"><i class="ri-rocket-line"></i> JEE/NEET Rank Booster</div>
+        <div class="rb-content">
+            <ul>
+                <li><strong>Medium Effect:</strong> In water (K=81), Force becomes F/81.</li>
+                <li><strong>Null Point Shortcut:</strong> For two like charges, distance from smaller charge (q₁) is: <br> 
+                <code>x = L / (√(q₂/q₁) + 1)</code></li>
+                <li><strong>Soap Bubble:</strong> If you charge a bubble (pos or neg), it <strong>expands</strong>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
+    <h2 style="color:var(--primary)"><i class="ri-wifi-line"></i> 3. Electric Field</h2>
+    
+    <div class="mind-map">
+        <div class="mm-center">Field Line Properties</div>
+        <div class="mm-branches">
+            <div class="mm-item"><i class="ri-arrow-right-up-line"></i> Tangent = Direction</div>
+            <div class="mm-item"><i class="ri-bar-chart-fill"></i> Density = Strength</div>
+            <div class="mm-item"><i class="ri-forbid-2-line"></i> Never Cross</div>
+            <div class="mm-item"><i class="ri-hammer-line"></i> 90° to Conductors</div>
+        </div>
+    </div>
+
+    <label class="topic-check">
+        <input type="checkbox"> <span><strong>Concept 2:</strong> A charge entering a field perpendicularly follows a <strong>Parabolic Path</strong>.</span>
+    </label>
+
+    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
+    <h2 style="color:var(--primary)"><i class="ri-group-line"></i> 4. Electric Dipole</h2>
+    <p>A "Power Couple" (+q and -q). Net Force is zero, but they spin (Torque).</p>
+    
+    <div class="story-box">
+        <strong><i class="ri-book-2-line"></i> The Memory Story: "The Dancing Duo"</strong><br>
+        Positive and Negative hold hands. They refuse to move from their spot (Force=0), but when the music starts (Electric Field), they twist and turn (Torque) to face the audience!
+    </div>
+
+    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
+    <h2 style="color:var(--primary)"><i class="ri-shopping-bag-3-line"></i> 5. Gauss's Law</h2>
+    <p>Total Flux depends ONLY on enclosed charge.</p>
+
+    <h3 style="font-size:1.1rem; margin-top:20px;">Cube Problems (Flux Φ)</h3>
+    <table class="concept-table">
+        <thead>
+            <tr>
+                <th>Charge Position</th>
+                <th>Flux Through Cube</th>
+                <th>Logic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Center</strong></td>
+                <td>q / ε₀</td>
+                <td>100% Inside</td>
+            </tr>
+            <tr>
+                <td><strong>Face Center</strong></td>
+                <td>q / 2ε₀</td>
+                <td>Shared by 2 cubes</td>
+            </tr>
+            <tr>
+                <td><strong>Corner</strong></td>
+                <td>q / 8ε₀</td>
+                <td>Shared by 8 cubes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
+    <div class="story-box" style="border-left-color: var(--primary); background: rgba(30, 136, 229, 0.1);">
+        <strong><i class="ri-quill-pen-line"></i> The Legend of Electro-Kingdom</strong><br>
+        King Positive and Queen Negative ruled with invisible webs (Fields). The Wizard Gauss caught them in a net, realizing he didn't need to enter the castle to measure their power—he just counted the lines leaving the net!
+    </div>
+
+    <button id="mark-complete" class="btn-big">
+        <i class="ri-check-double-line"></i> Mark Chapter Complete
+    </button>
+
+    <div class="chapter-nav" style="display:flex; justify-content:space-between; margin-top:40px; border-top:1px solid var(--border); padding-top:20px;">
+        <a href="#" class="nav-btn" style="opacity:0.5; color:var(--text-muted); border-color:var(--border);"><i class="ri-arrow-left-line"></i> Previous</a>
+        <a href="#" class="nav-btn" style="opacity:0.5; color:var(--text-muted); border-color:var(--border);">Next <i class="ri-arrow-right-line"></i></a>
+    </div>
+
+</main>
+
+<script src="../../../assets/js/script.js"></script>
+</body>
+</html>
