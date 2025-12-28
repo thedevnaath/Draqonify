@@ -3,74 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete Master Notes: Electric Charges & Fields. NCERT Deep Dive with Kid Analogies.">
+    <meta name="description" content="God Master Notes: Electric Charges & Fields. Full Derivations, NEET Points, Solved Examples.">
     <title>Electric Charges (God Mode) | Draqonify</title>
     <link rel="stylesheet" href="../../../assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
     
     <style>
-        /* --- MASTER NOTES STYLING --- */
+        /* --- GOD MODE STYLING --- */
         
-        /* 1. Definitions Box */
+        /* 1. Definitions & Constants */
         .def-box {
-            border-left: 4px solid var(--primary);
-            background: rgba(30, 136, 229, 0.05);
+            border-left: 5px solid var(--primary);
+            background: rgba(30, 136, 229, 0.08);
             padding: 15px; margin: 15px 0;
             border-radius: 0 8px 8px 0;
         }
-        .def-title { font-weight: bold; color: var(--primary); display: block; margin-bottom: 5px; }
+        .def-title { font-weight: 800; color: var(--primary); display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; }
 
-        /* 2. Deep Concept (The "Why") */
-        .deep-concept {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 8px; padding: 20px; margin: 20px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .deep-header {
-            display: flex; align-items: center; gap: 10px;
-            font-weight: bold; color: #9C27B0; margin-bottom: 10px;
-            text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;
-        }
-
-        /* 3. KID'S EXPLANATION BOX (New!) */
+        /* 2. Kid's Box (The "Simplifier") */
         .kid-box {
             background: linear-gradient(135deg, #fff9c4 0%, #ffffff 100%);
-            border: 2px dashed #FBC02D;
-            border-radius: 12px;
-            padding: 15px;
-            margin: 15px 0;
-            color: #4E342E;
+            border: 2px dashed #FBC02D; border-radius: 12px;
+            padding: 15px; margin: 20px 0; color: #4E342E;
         }
         [data-theme="dark"] .kid-box { background: linear-gradient(135deg, #3E2723 0%, #1e1e1e 100%); color: #FFE0B2; border-color: #FF6F00; }
-        .kid-title {
-            font-weight: bold; color: #FF6F00; display: block; margin-bottom: 5px;
-            font-family: sans-serif; letter-spacing: 0.5px;
-        }
+        .kid-title { font-weight: bold; color: #FF6F00; margin-bottom: 5px; display: block; }
 
-        /* 4. JEE/NEET Rank Booster */
-        .rank-booster {
-            border: 2px solid var(--accent); border-radius: 12px; margin: 30px 0; overflow: hidden;
+        /* 3. Tables (Comparison & Cases) */
+        .concept-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: var(--bg-card); border-radius: 8px; overflow: hidden;
+            border: 1px solid var(--border); font-size: 0.95rem;
         }
-        .rb-header {
-            background: var(--accent); color: #000; padding: 10px 20px;
-            font-weight: bold; display: flex; align-items: center; gap: 10px;
-        }
-        .rb-content { padding: 20px; background: var(--bg-card); }
-        .rb-content ul { padding-left: 20px; margin: 0; }
-        .rb-content li { margin-bottom: 10px; }
+        .concept-table th { background: var(--primary); color: white; padding: 12px; text-align: left; }
+        .concept-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-main); }
+        .concept-table tr:last-child td { border-bottom: none; }
 
-        /* 5. Formula Table */
-        .formula-table {
-            width: 100%; border-collapse: collapse; margin-top: 10px;
-            font-family: 'Courier New', monospace; font-size: 0.95rem;
+        /* 4. COLLAPSIBLE BOXES (The "Tap to Reveal" Magic) */
+        details {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; margin: 15px 0; overflow: hidden;
+            transition: all 0.3s ease;
         }
-        .formula-table th { background: #333; color: white; padding: 10px; text-align: left; }
-        .formula-table td { border-bottom: 1px solid var(--border); padding: 10px; color: var(--text-main); }
+        summary {
+            padding: 15px; cursor: pointer; font-weight: bold;
+            background: rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center;
+            list-style: none; /* Hide default arrow */
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 1.2rem; font-weight: bold; }
+        details[open] summary::after { content: '-'; }
         
-        /* 6. Derivation Steps */
-        .derivation {
-            margin-left: 15px; border-left: 2px dashed var(--text-muted); padding-left: 15px;
-        }
+        .details-content { padding: 20px; border-top: 1px solid var(--border); }
+        
+        /* Box Colors */
+        .deriv-box summary { color: #D32F2F; border-left: 4px solid #D32F2F; } /* Derivations = Red */
+        .solve-box summary { color: #2E7D32; border-left: 4px solid #2E7D32; } /* Solved Ex = Green */
+        .deep-box summary { color: #673AB7; border-left: 4px solid #673AB7; } /* Deep Dive = Purple */
+
+        /* 5. Formula Logic Text */
+        .logic-text { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-top: 5px; }
+        .logic-arrow { color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
@@ -87,203 +80,270 @@
     </p>
 
     <h1><i class="ri-flashlight-fill" style="color:#FFC107"></i> Electric Charges & Fields</h1>
-    <p class="lead">The "God Master" Notes. Every concept, definition, and secret trick.</p>
+    <p class="lead">God Master Notes. Concept Clarity Level: 100%.</p>
 
-    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
-    <h2 style="color:var(--primary)">1. Electrostatics & Charge</h2>
-    
-    <div class="def-box">
-        <span class="def-title">DEFINITION: Electrostatics</span>
-        The branch of physics that deals with the study of forces, fields, and potentials arising from <strong>static charges</strong> (charges at rest).
+    <div style="background:var(--bg-card); padding:10px; border:1px solid var(--border); border-radius:8px; font-size:0.9rem; margin-bottom:30px;">
+        <strong><i class="ri-pushpin-line"></i> Essential Constants:</strong><br>
+        • Charge of electron ($e$): $-1.6 \times 10^{-19} C$<br>
+        • Mass of electron ($m_e$): $9.1 \times 10^{-31} kg$<br>
+        • Mass of proton ($m_p$): $1.67 \times 10^{-27} kg$<br>
+        • Permittivity of space ($\epsilon_0$): $8.854 \times 10^{-12} C^2/Nm^2$<br>
+        • Coulomb Constant ($k$): $9 \times 10^9 Nm^2/C^2$
     </div>
 
-    <h3>1.1 Electric Charge</h3>
-    <p>Charge is an intrinsic property of elementary particles (like mass) which gives rise to electric force.</p>
-    <ul>
-        <li><strong>Two Types:</strong> Positive (Proton) and Negative (Electron). Named by Benjamin Franklin.</li>
-        <li><strong>Polarity:</strong> The property that differentiates the two kinds of charges.</li>
-        <li><strong>Interaction:</strong> Like charges repel; Unlike charges attract.</li>
-    </ul>
+    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
+    <h2 style="color:var(--primary)">1. Electric Charge</h2>
+    
+    <div class="def-box">
+        <span class="def-title">DEFINITION</span>
+        <strong>Electric Charge</strong> is an intrinsic property of elementary particles (like mass) that causes them to experience a force when placed in an electromagnetic field.
+    </div>
 
     <div class="kid-box">
         <span class="kid-title"><i class="ri-bear-smile-line"></i> Kid's Explanation</span>
-        Imagine <strong>Magnets</strong>. If you try to push the North pole of one magnet to the North pole of another, they fight and push back (Repel). But North and South click together instantly (Attract). Charges are just like tiny, invisible magnets!
-    </div>
-
-    <div class="deep-concept">
-        <div class="deep-header"><i class="ri-microscope-line"></i> Deep Dive: Gold Leaf Electroscope</div>
-        <p>A device used to detect the presence and polarity of charge.</p>
+        Imagine every particle has a "personality".
         <ul>
-            <li><strong>Construction:</strong> A metal rod with a knob at top and two thin gold leaves at bottom, inside a glass jar.</li>
-            <li><strong>Working:</strong> When a charged object touches the knob, charge flows down to the leaves. Since both leaves get the <em>same</em> charge, they repel and diverge.</li>
-            <li><strong>Degree of Divergence:</strong> Measures the <strong>amount</strong> of charge.</li>
+            <li><strong>Protons</strong> are "Positive" (+).</li>
+            <li><strong>Electrons</strong> are "Negative" (-).</li>
+            <li><strong>Neutrons</strong> are "Boring" (0).</li>
         </ul>
+        Rule: Same personalities fight (Repel). Opposite personalities become best friends (Attract).
     </div>
 
-    <h3>1.2 Conductors vs Insulators</h3>
+    <h3>1.1 Basic Properties</h3>
     <ul>
-        <li><strong>Conductors:</strong> Allow electricity to pass through them easily (e.g., Metals, Humans, Earth). They have <em>free electrons</em>.</li>
-        <li><strong>Insulators:</strong> Do not allow passage of electricity (e.g., Glass, Plastic, Nylon).</li>
+        <li><strong>Additivity:</strong> Charges add like real numbers ($Q = +5C - 2C = +3C$).</li>
+        <li><strong>Conservation:</strong> Charge can neither be created nor destroyed. In $\beta$-decay: $n \to p + e^- + \bar{\nu}$ (Net charge 0 before & after).</li>
+        <li><strong>Quantization ($q = ne$):</strong> Charge comes in packets. Smallest packet is $e$.</li>
     </ul>
 
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-car-line"></i> Kid's Explanation</span>
-        Think of <strong>Conductors</strong> like a <strong>Highway</strong> where cars (electrons) can zoom freely. <br>
-        Think of <strong>Insulators</strong> like a <strong>Thick Jungle</strong>; the cars get stuck and can't move anywhere.
-    </div>
-    
-    <h3>1.3 Methods of Charging</h3>
-    <ol>
-        <li><strong>By Friction:</strong> Rubbing two insulators. Electrons are physically torn off one and added to the other.</li>
-        <li><strong>By Conduction:</strong> Direct contact between a charged body and a neutral conductor.</li>
-        <li><strong>By Induction:</strong> Charging without contact (Polarization + Grounding).</li>
-    </ol>
+    <details class="solve-box">
+        <summary><i class="ri-question-fill"></i> Solved Example: How many electrons in 1 Coulomb?</summary>
+        <div class="details-content">
+            <p><strong>Q:</strong> Calculate the number of electrons constituting 1 Coulomb of charge.</p>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Formula: $q = ne \Rightarrow n = q/e$</li>
+                <li>Given: $q = 1C$, $e = 1.6 \times 10^{-19}C$</li>
+                <li>Calculation: $n = \frac{1}{1.6 \times 10^{-19}} = 6.25 \times 10^{18}$</li>
+            </ul>
+            <p><strong>Answer:</strong> $6.25 \times 10^{18}$ electrons.</p>
+        </div>
+    </details>
 
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-magic-line"></i> Kid's Explanation</span>
-        <strong>Friction:</strong> Rubbing a balloon on your hair. You are literally stealing electrons from your hair!<br>
-        <strong>Conduction:</strong> Shaking hands with a zombie—now you are infected too (charge shares).<br>
-        <strong>Induction:</strong> A zombie stands near you (without touching). You get scared and run to the other side of the room. The fear (charge) is induced!
-    </div>
-
-    <h3>1.4 Basic Properties of Charge</h3>
-    <ul>
-        <li><strong>Additivity:</strong> Charges add up like numbers. ($Q = +2C - 3C + 5C = +4C$).</li>
-        <li><strong>Conservation:</strong> Charge is never created or destroyed, only transferred. (Total charge of universe is constant).</li>
-        <li><strong>Quantization:</strong> Charge is not continuous. It comes in packets of $e$.
-            <br><code>q = ne</code> where $n$ is an integer, $e = 1.6 \times 10^{-19} C$.
-        </li>
-    </ul>
-
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-shopping-cart-line"></i> Kid's Explanation</span>
-        <strong>Quantization:</strong> Think of buying <strong>Eggs</strong>. You can buy 1 egg, 2 eggs, or 100 eggs. But you can NEVER buy <strong>1.5 eggs</strong>. Nature only sells electrons in whole numbers!
-    </div>
-
-    <h3>1.5 Continuous Charge Distribution</h3>
-    <p>At macroscopic levels, quantization is ignored, and we treat charge as continuous.</p>
-    <ul>
-        <li><strong>Linear Charge Density ($\lambda$):</strong> Charge per unit length. Used for wires/rings. <br>Formula: $\lambda = \frac{q}{L}$ (Unit: C/m)</li>
-        <li><strong>Surface Charge Density ($\sigma$):</strong> Charge per unit area. Used for sheets/shells. <br>Formula: $\sigma = \frac{q}{A}$ (Unit: C/m²)</li>
-        <li><strong>Volume Charge Density ($\rho$):</strong> Charge per unit volume. Used for solid spheres. <br>Formula: $\rho = \frac{q}{V}$ (Unit: C/m³)</li>
-    </ul>
-
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-cake-3-line"></i> Kid's Explanation</span>
-        <strong>Linear ($\lambda$):</strong> Like ants marching in a single line on a string.<br>
-        <strong>Surface ($\sigma$):</strong> Like butter spread evenly over a slice of bread.<br>
-        <strong>Volume ($\rho$):</strong> Like chocolate chips hidden everywhere inside a thick cookie!
-    </div>
+    <h3>1.2 Continuous Charge Distribution</h3>
+    <table class="concept-table">
+        <tr>
+            <th>Type</th>
+            <th>Symbol</th>
+            <th>Formula</th>
+            <th>Unit</th>
+            <th>Used For</th>
+        </tr>
+        <tr>
+            <td>Linear</td>
+            <td>$\lambda$ (Lambda)</td>
+            <td>$\lambda = q/L$</td>
+            <td>$C/m$</td>
+            <td>Wires, Rings</td>
+        </tr>
+        <tr>
+            <td>Surface</td>
+            <td>$\sigma$ (Sigma)</td>
+            <td>$\sigma = q/A$</td>
+            <td>$C/m^2$</td>
+            <td>Sheets, Shells</td>
+        </tr>
+        <tr>
+            <td>Volume</td>
+            <td>$\rho$ (Rho)</td>
+            <td>$\rho = q/V$</td>
+            <td>$C/m^3$</td>
+            <td>Solid Spheres</td>
+        </tr>
+    </table>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
     <h2 style="color:var(--primary)">2. Coulomb's Law</h2>
-    
-    <div style="text-align:center; padding:20px; font-weight:bold; font-size:1.2rem; background:var(--bg-card);">
-        F = k |q₁q₂| / r²
-    </div>
-    
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-user-heart-line"></i> Kid's Explanation</span>
-        Think of <strong>Best Friends</strong> ($q_1, q_2$). If they are close (small $r$), their bond (Force) is super strong. If they move to different cities (large $r$), the bond gets weaker very fast.
+
+    <div class="def-box">
+        <span class="def-title">LAW</span>
+        Force between two point charges is proportional to product of charges and inversely proportional to square of distance.
     </div>
 
-    <h3>2.1 Vector Form & Superposition</h3>
-    <p>Force is a vector. Net force on a charge is the vector sum of all individual forces.</p>
-    
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-team-line"></i> Kid's Explanation</span>
-        If 5 people push you from different directions, you don't just add their strength ($5+5$). You have to see <strong>which direction</strong> they are pushing. Maybe two people cancel each other out!
+    <div style="background:var(--bg-card); padding:15px; border-radius:8px; border:1px solid var(--primary); text-align:center; margin:10px 0;">
+        <strong style="font-size:1.3rem; color:var(--primary);">$F = \frac{k |q_1 q_2|}{r^2}$</strong>
+        <p class="logic-text">
+            <span class="logic-arrow">Logic:</span> If distance ($r$) doubles, Force becomes $1/4$.<br>
+            If charges double, Force becomes 4 times stronger.
+        </p>
     </div>
+
+    <h3>2.1 Comparison: Gravity vs Electrostatics (Important!)</h3>
+    <table class="concept-table">
+        <tr>
+            <th>Feature</th>
+            <th>Electrostatic Force ($F_e$)</th>
+            <th>Gravitational Force ($F_g$)</th>
+        </tr>
+        <tr>
+            <td><strong>Nature</strong></td>
+            <td>Attracts OR Repels</td>
+            <td>Always Attracts</td>
+        </tr>
+        <tr>
+            <td><strong>Strength</strong></td>
+            <td>Very Strong ($10^{36}$ times stronger)</td>
+            <td>Very Weak</td>
+        </tr>
+        <tr>
+            <td><strong>Medium</strong></td>
+            <td>Depends on Medium ($K$)</td>
+            <td>Independent of Medium</td>
+        </tr>
+    </table>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
     <h2 style="color:var(--primary)">3. Electric Field</h2>
-
+    
     <div class="def-box">
-        <span class="def-title">DEFINITION: Electric Field</span>
-        The region around a charge where its influence is felt. Force per unit test charge.
-        <br>$\vec{E} = \frac{\vec{F}}{q_0}$
+        <span class="def-title">DEFINITION</span>
+        Force experienced per unit positive test charge. A vector quantity.
+        <br><strong>Unit:</strong> $N/C$ or $V/m$.
     </div>
+    
+    <p><strong>Vector Form:</strong> $\vec{E} = \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \hat{r}$</p>
 
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-fire-line"></i> Kid's Explanation</span>
-        Imagine a <strong>Campfire</strong> (Charge). Even if you don't touch the fire, you can feel the <strong>Heat</strong> (Field) from a distance. The closer you get, the stronger the heat (Field Strength)!
-    </div>
-
-    <h3>3.1 Electric Field Lines</h3>
-    <ol>
-        <li>Start (+) $\to$ End (-).</li>
-        <li>Never Cross.</li>
-        <li>Continuous curves.</li>
-        <li>Normal to conductor surface.</li>
-    </ol>
-
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-road-map-line"></i> Kid's Explanation</span>
-        Think of them as <strong>Traffic Lanes</strong>.
-        1. Cars always drive from Plus City to Minus Town.
-        2. Lanes never cross (or cars would crash!).
-        3. Crowded lanes mean a lot of traffic (Strong Field).
-    </div>
+    <details class="deep-box">
+        <summary><i class="ri-lightbulb-flash-line"></i> Deep Dive: Why "Test Charge" must be small?</summary>
+        <div class="details-content">
+            <p>We define $E = \lim_{q_0 \to 0} F/q_0$.</p>
+            <p><strong>Why?</strong> If the test charge $q_0$ is big, its own electric field will push the main source charge ($Q$) away or disturb the setup. We want to measure the field <em>without</em> changing it. Imagine measuring the temperature of a coffee drop with a giant frozen thermometer—it would cool the drop! You need a tiny sensor.</p>
+        </div>
+    </details>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
     <h2 style="color:var(--primary)">4. Electric Dipole</h2>
-    <p>Two equal and opposite charges separated by distance $2a$.</p>
-
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-service-line"></i> Kid's Explanation</span>
-        A <strong>Dumbbell</strong>! One side is heavy positive, one side is heavy negative. If you push the center, it doesn't move. But if you twist it, it <strong>spins</strong>!
-    </div>
-
-    <h3>4.1 Field Formulas</h3>
+    <p>Two charges $\pm q$ separated by $2a$.</p>
     <ul>
-        <li><strong>Axial:</strong> $E = \frac{2kp}{r^3}$ (Along axis).</li>
-        <li><strong>Equatorial:</strong> $E = \frac{kp}{r^3}$ (Perpendicular bisector).</li>
+        <li><strong>Dipole Moment ($\vec{p}$):</strong> Vector pointing from <strong>Negative (-) to Positive (+)</strong>.</li>
+        <li><strong>Formula:</strong> $\vec{p} = q(2\vec{a})$</li>
     </ul>
 
-    <h3>4.2 Torque on Dipole</h3>
-    <p>$\vec{\tau} = pE \sin\theta$. (Tries to align dipole with field).</p>
+    <h3>4.1 Electric Field due to Dipole</h3>
     
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-compass-3-line"></i> Kid's Explanation</span>
-        Think of a <strong>Compass Needle</strong> in the Earth's magnetic field. It always wants to point North. If you force it to point East, it will wiggle and fight to go back North. That "wiggle force" is Torque.
-    </div>
+    <details class="deriv-box">
+        <summary><i class="ri-functions-line"></i> Derivation: Field on Axial Line</summary>
+        <div class="details-content">
+            <p><strong>Goal:</strong> Find $E$ at distance $r$ from center on the axis.</p>
+            <ol>
+                <li>Field due to $+q$: $E_+ = \frac{kq}{(r-a)^2}$ (Away)</li>
+                <li>Field due to $-q$: $E_- = \frac{kq}{(r+a)^2}$ (Towards)</li>
+                <li>Net Field $E = E_+ - E_-$</li>
+                <li>Solving: $E = kq [\frac{1}{(r-a)^2} - \frac{1}{(r+a)^2}]$</li>
+                <li>Using $(r \gg a)$, we get:</li>
+            </ol>
+            <div style="background:#eee; padding:10px; border-radius:5px; text-align:center;">
+                $\vec{E}_{axial} = \frac{2k\vec{p}}{r^3}$
+            </div>
+            <p class="logic-text">Direction: Same as dipole moment ($\vec{p}$).</p>
+        </div>
+    </details>
+
+    <details class="deriv-box">
+        <summary><i class="ri-functions-line"></i> Derivation: Field on Equatorial Line</summary>
+        <div class="details-content">
+            <p><strong>Goal:</strong> Find $E$ at distance $r$ on perpendicular bisector.</p>
+            <ol>
+                <li>Magnitudes are equal: $E_+ = E_- = \frac{kq}{r^2+a^2}$.</li>
+                <li>Vertical components ($E\sin\theta$) cancel out.</li>
+                <li>Horizontal components ($E\cos\theta$) add up.</li>
+                <li>$E_{net} = 2E\cos\theta$ (Opposite to $\vec{p}$).</li>
+            </ol>
+            <div style="background:#eee; padding:10px; border-radius:5px; text-align:center;">
+                $\vec{E}_{eq} = -\frac{k\vec{p}}{r^3}$
+            </div>
+            <p class="logic-text">Direction: Opposite to dipole moment ($\vec{p}$). Note the negative sign!</p>
+        </div>
+    </details>
+
+    <h3>4.2 Torque on Dipole ($\vec{\tau} = \vec{p} \times \vec{E}$)</h3>
+    <p>Net Force is ZERO. Net Torque rotates it.</p>
+    
+    <table class="concept-table">
+        <tr>
+            <th>Angle ($\theta$)</th>
+            <th>Torque ($\tau = pE\sin\theta$)</th>
+            <th>Potential Energy ($U = -pE\cos\theta$)</th>
+            <th>State</th>
+        </tr>
+        <tr>
+            <td><strong>0° (Parallel)</strong></td>
+            <td>0 (Min)</td>
+            <td>$-pE$ (Min)</td>
+            <td><strong>Stable Equilibrium</strong></td>
+        </tr>
+        <tr>
+            <td><strong>90° (Perpendicular)</strong></td>
+            <td>$pE$ (Maximum)</td>
+            <td>0</td>
+            <td>Max Torque</td>
+        </tr>
+        <tr>
+            <td><strong>180° (Anti-Parallel)</strong></td>
+            <td>0 (Min)</td>
+            <td>$+pE$ (Max)</td>
+            <td><strong>Unstable Equilibrium</strong></td>
+        </tr>
+    </table>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
-    <h2 style="color:var(--primary)">5. Gauss's Law</h2>
+    <h2 style="color:var(--primary)">5. Electric Flux & Gauss Law</h2>
 
-    <div class="def-box">
-        <span class="def-title">LAW: Gauss's Law</span>
-        Total Flux $\Phi = \frac{q_{enclosed}}{\epsilon_0}$
+    <h3>5.1 Electric Flux ($\Phi_E$)</h3>
+    <p>Measure of flow of field lines through an area.</p>
+    <div style="background:var(--bg-card); padding:10px; border-left:4px solid var(--accent);">
+        Formula: $\Phi = \vec{E} \cdot \vec{A} = EA \cos\theta$
+    </div>
+    
+    <h4>3 Cases of Flux:</h4>
+    <ul>
+        <li><strong>$\theta = 0^\circ$ (Area $\perp$ Field):</strong> $\Phi = EA$ (Maximum Flux). Field pierces straight through.</li>
+        <li><strong>$\theta = 90^\circ$ (Area || Field):</strong> $\Phi = 0$ (Zero Flux). Field skims the surface.</li>
+        <li><strong>$\theta = 180^\circ$:</strong> $\Phi = -EA$ (Inward Flux).</li>
+    </ul>
+
+    <details class="deriv-box">
+        <summary><i class="ri-functions-line"></i> Derivations: Gauss Law Applications</summary>
+        <div class="details-content">
+            <p><strong>1. Long Wire ($\lambda$):</strong> <br> Surface: Cylinder. Flux only through curved part.<br> $E(2\pi rl) = q/\epsilon_0 \Rightarrow E = \frac{\lambda}{2\pi\epsilon_0 r}$.</p>
+            <p><strong>2. Plane Sheet ($\sigma$):</strong> <br> Surface: Pillbox. Flux through 2 flat faces.<br> $2EA = \sigma A/\epsilon_0 \Rightarrow E = \frac{\sigma}{2\epsilon_0}$.</p>
+            <p><strong>3. Spherical Shell ($\sigma$):</strong> <br>
+               - Outside ($r>R$): Like point charge ($kq/r^2$).<br>
+               - Inside ($r<R$): No charge enclosed $\Rightarrow E=0$.
+            </p>
+        </div>
+    </details>
+
+    <div style="border:2px solid #FF9800; border-radius:10px; margin-top:30px; overflow:hidden;">
+        <div style="background:#FF9800; color:white; padding:10px; font-weight:bold;"><i class="ri-rocket-fill"></i> NEET/JEE Rank Booster Points</div>
+        <div style="padding:15px; background:var(--bg-card);">
+            <ul>
+                <li><strong>Soap Bubble:</strong> If charged (pos or neg), radius INCREASES due to outward repulsion.</li>
+                <li><strong>Pendulum:</strong> If the whole setup is in a satellite (g=0), angle between strings becomes 180°. Tension $T = \frac{kq^2}{(2L)^2}$.</li>
+                <li><strong>Cube Center:</strong> Flux = $q/\epsilon_0$. <strong>Corner:</strong> Flux = $q/8\epsilon_0$. <strong>Face Center:</strong> Flux = $q/2\epsilon_0$.</li>
+                <li><strong>Dipole Force:</strong> In non-uniform field, dipole experiences BOTH Torque and Force.</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-lightbulb-line"></i> Kid's Explanation</span>
-        Imagine a <strong>Lightbulb</strong> inside a <strong>Paper Bag</strong>. The amount of light coming out (Flux) depends ONLY on how bright the bulb is ($q_{enclosed}$). It doesn't matter if the bag is round, square, or crumpled. The same amount of light comes out!
-    </div>
-
-    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
-    <h2 style="color:var(--primary)">6. Conductors</h2>
-    <p><strong>E = 0 Inside.</strong> Charge resides on surface.</p>
-
-    <div class="kid-box">
-        <span class="kid-title"><i class="ri-shield-check-line"></i> Kid's Explanation</span>
-        A hollow conductor is a <strong>Safe House</strong>. If there is a lightning storm (Electric Field) outside, the people inside the safe house feel absolutely nothing. The lightning flows over the roof (Surface) and goes to ground.
-    </div>
-
-    <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
-    <div style="background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%); padding: 25px; border-radius: 12px; border: 2px solid var(--primary);">
-        <h2 style="text-align:center; color:var(--primary); margin-top:0;"><i class="ri-book-open-line"></i> The Story of Electro-Kingdom</h2>
-        <p style="font-size:1.1rem; line-height:1.8; color:#37474F;">
-            Once upon a time, there was a land called <strong>Matter</strong>. In this land lived tiny citizens called <strong>Charges</strong>. Some were <strong>Positive (Optimists)</strong> and some were <strong>Negative (Pessimists)</strong>.
-            <br><br>
-            <strong>The Law of Interaction:</strong> When two Optimists met, they fought and pushed away (Repulsion). But when an Optimist met a Pessimist, they fell in love and pulled together (Attraction).
-            <br><br>
-            <strong>The Aura:</strong> Every citizen had an invisible "Vibe" around them called the <strong>Electric Field</strong>. It warned others, "I am here!" before they even touched.
-            <br><br>
-            <strong>The Power Couple:</strong> Sometimes, an Optimist and a Pessimist held hands and refused to let go. They became a <strong>Dipole</strong>. They wouldn't move from their spot, but if the wind (External Field) blew, they would spin and dance (Torque).
-            <br><br>
-            <strong>The Wizard Gauss:</strong> One day, a lazy wizard named Gauss wanted to count the citizens. Instead of counting one by one, he threw a giant <strong>Net (Surface)</strong> over a house. He just looked at the vibes (Flux) coming out of the net. He instantly knew: "Aha! There are exactly 5 citizens inside!"
-        </p>
+    <div class="kid-box" style="border-color: var(--primary);">
+        <span class="kid-title" style="color:var(--primary); font-size:1.1rem;"><i class="ri-book-read-line"></i> The Master Link Story</span>
+        Imagine <strong>Charge</strong> is a Celebrity.
+        <br>1. Their fame spreading out is the <strong>Electric Field</strong>.
+        <br>2. <strong>Coulomb's Law</strong> is how two celebrities react (Egos clash!).
+        <br>3. A <strong>Dipole</strong> is a Celebrity Couple holding hands. They don't move (Net Force 0) but they love to dance (Torque) for the paparazzi.
+        <br>4. <strong>Gauss</strong> is a smart reporter. He doesn't count every fan; he just throws a blanket (Gaussian Surface) over the celebrity and measures the "Vibe" (Flux) coming through the blanket to know who is inside!
     </div>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
@@ -295,54 +355,52 @@
                 <tr>
                     <th>Concept</th>
                     <th>Formula</th>
+                    <th>Relation Logic</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Quantization</td>
-                    <td>$q = \pm ne$</td>
-                </tr>
-                <tr>
-                    <td>Coulomb's Law</td>
-                    <td>$F = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r^2}$</td>
-                </tr>
-                <tr>
-                    <td>Linear Charge Density</td>
-                    <td>$\lambda = q/L$</td>
-                </tr>
-                <tr>
-                    <td>Surface Charge Density</td>
-                    <td>$\sigma = q/A$</td>
-                </tr>
-                 <tr>
-                    <td>Volume Charge Density</td>
-                    <td>$\rho = q/V$</td>
+                    <td>Coulomb Force</td>
+                    <td>$F = \frac{k q_1 q_2}{r^2}$</td>
+                    <td>$r \uparrow \Rightarrow F \downarrow \downarrow$ (Square law)</td>
                 </tr>
                 <tr>
                     <td>Electric Field</td>
-                    <td>$E = F/q_0$ or $E = \frac{kq}{r^2}$</td>
+                    <td>$E = \frac{kQ}{r^2}$</td>
+                    <td>Depends only on Source Q</td>
                 </tr>
                 <tr>
-                    <td>Dipole Moment</td>
-                    <td>$p = q(2a)$</td>
+                    <td>Dipole Axial</td>
+                    <td>$E = \frac{2kp}{r^3}$</td>
+                    <td>Falls faster than point charge ($1/r^3$)</td>
                 </tr>
                 <tr>
-                    <td>Torque on Dipole</td>
-                    <td>$\tau = pE \sin\theta$</td>
+                    <td>Dipole Torque</td>
+                    <td>$\tau = pE\sin\theta$</td>
+                    <td>Max at 90°, Zero at 0°</td>
                 </tr>
                 <tr>
-                    <td>Gauss's Law</td>
-                    <td>$\Phi = q_{in}/\epsilon_0$</td>
+                    <td>Flux</td>
+                    <td>$\Phi = EA\cos\theta$</td>
+                    <td>Max when Area $\perp$ Field</td>
+                </tr>
+                <tr>
+                    <td>Line Charge Field</td>
+                    <td>$E = \frac{\lambda}{2\pi\epsilon_0 r}$</td>
+                    <td>$E \propto 1/r$ (Not square law!)</td>
+                </tr>
+                <tr>
+                    <td>Sheet Field</td>
+                    <td>$E = \frac{\sigma}{2\epsilon_0}$</td>
+                    <td>Constant! Distance doesn't matter.</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <div style="margin-top:50px; text-align:center;">
-        <button id="mark-complete" class="btn-big">
-            <i class="ri-check-double-line"></i> Mastered This Chapter
-        </button>
-    </div>
+    <button id="mark-complete" class="btn-big" style="margin-top:40px;">
+        <i class="ri-check-double-line"></i> Mastered This Chapter
+    </button>
 
 </main>
 
