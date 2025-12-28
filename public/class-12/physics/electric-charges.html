@@ -30,12 +30,20 @@
         .kid-title { font-weight: bold; color: #FF6F00; margin-bottom: 5px; display: block; }
 
         /* 3. Tables (Comparison & Cases) */
-        .concept-table {
-            width: 100%; border-collapse: collapse; margin: 20px 0;
-            background: var(--bg-card); border-radius: 8px; overflow: hidden;
-            border: 1px solid var(--border); font-size: 0.95rem;
+        /* FIXED: Table Wrapper for Horizontal Scrolling */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border);
         }
-        .concept-table th { background: var(--primary); color: white; padding: 12px; text-align: left; }
+        .concept-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-card); font-size: 0.95rem;
+            min-width: 500px; /* Ensures table doesn't squish */
+        }
+        .concept-table th { background: var(--primary); color: white; padding: 12px; text-align: left; white-space: nowrap; }
         .concept-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-main); }
         .concept-table tr:last-child td { border-bottom: none; }
 
@@ -64,6 +72,15 @@
         /* 5. Formula Logic Text */
         .logic-text { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-top: 5px; }
         .logic-arrow { color: var(--accent); font-weight: bold; }
+        
+        /* 6. Formula Table Specifics */
+        .formula-table {
+            width: 100%; border-collapse: collapse;
+            font-family: 'Courier New', monospace; font-size: 0.95rem;
+            min-width: 600px; /* Forces scroll on mobile */
+        }
+        .formula-table th { background: #333; color: white; padding: 10px; text-align: left; }
+        .formula-table td { border-bottom: 1px solid var(--border); padding: 10px; color: var(--text-main); }
     </style>
 </head>
 <body>
@@ -132,36 +149,39 @@
     </details>
 
     <h3>1.2 Continuous Charge Distribution</h3>
-    <table class="concept-table">
-        <tr>
-            <th>Type</th>
-            <th>Symbol</th>
-            <th>Formula</th>
-            <th>Unit</th>
-            <th>Used For</th>
-        </tr>
-        <tr>
-            <td>Linear</td>
-            <td>$\lambda$ (Lambda)</td>
-            <td>$\lambda = q/L$</td>
-            <td>$C/m$</td>
-            <td>Wires, Rings</td>
-        </tr>
-        <tr>
-            <td>Surface</td>
-            <td>$\sigma$ (Sigma)</td>
-            <td>$\sigma = q/A$</td>
-            <td>$C/m^2$</td>
-            <td>Sheets, Shells</td>
-        </tr>
-        <tr>
-            <td>Volume</td>
-            <td>$\rho$ (Rho)</td>
-            <td>$\rho = q/V$</td>
-            <td>$C/m^3$</td>
-            <td>Solid Spheres</td>
-        </tr>
-    </table>
+    
+    <div class="table-wrapper">
+        <table class="concept-table">
+            <tr>
+                <th>Type</th>
+                <th>Symbol</th>
+                <th>Formula</th>
+                <th>Unit</th>
+                <th>Used For</th>
+            </tr>
+            <tr>
+                <td>Linear</td>
+                <td>$\lambda$ (Lambda)</td>
+                <td>$\lambda = q/L$</td>
+                <td>$C/m$</td>
+                <td>Wires, Rings</td>
+            </tr>
+            <tr>
+                <td>Surface</td>
+                <td>$\sigma$ (Sigma)</td>
+                <td>$\sigma = q/A$</td>
+                <td>$C/m^2$</td>
+                <td>Sheets, Shells</td>
+            </tr>
+            <tr>
+                <td>Volume</td>
+                <td>$\rho$ (Rho)</td>
+                <td>$\rho = q/V$</td>
+                <td>$C/m^3$</td>
+                <td>Solid Spheres</td>
+            </tr>
+        </table>
+    </div>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
     <h2 style="color:var(--primary)">2. Coulomb's Law</h2>
@@ -180,28 +200,30 @@
     </div>
 
     <h3>2.1 Comparison: Gravity vs Electrostatics (Important!)</h3>
-    <table class="concept-table">
-        <tr>
-            <th>Feature</th>
-            <th>Electrostatic Force ($F_e$)</th>
-            <th>Gravitational Force ($F_g$)</th>
-        </tr>
-        <tr>
-            <td><strong>Nature</strong></td>
-            <td>Attracts OR Repels</td>
-            <td>Always Attracts</td>
-        </tr>
-        <tr>
-            <td><strong>Strength</strong></td>
-            <td>Very Strong ($10^{36}$ times stronger)</td>
-            <td>Very Weak</td>
-        </tr>
-        <tr>
-            <td><strong>Medium</strong></td>
-            <td>Depends on Medium ($K$)</td>
-            <td>Independent of Medium</td>
-        </tr>
-    </table>
+    <div class="table-wrapper">
+        <table class="concept-table">
+            <tr>
+                <th>Feature</th>
+                <th>Electrostatic Force ($F_e$)</th>
+                <th>Gravitational Force ($F_g$)</th>
+            </tr>
+            <tr>
+                <td><strong>Nature</strong></td>
+                <td>Attracts OR Repels</td>
+                <td>Always Attracts</td>
+            </tr>
+            <tr>
+                <td><strong>Strength</strong></td>
+                <td>Very Strong ($10^{36}$ times stronger)</td>
+                <td>Very Weak</td>
+            </tr>
+            <tr>
+                <td><strong>Medium</strong></td>
+                <td>Depends on Medium ($K$)</td>
+                <td>Independent of Medium</td>
+            </tr>
+        </table>
+    </div>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
     <h2 style="color:var(--primary)">3. Electric Field</h2>
@@ -270,32 +292,34 @@
     <h3>4.2 Torque on Dipole ($\vec{\tau} = \vec{p} \times \vec{E}$)</h3>
     <p>Net Force is ZERO. Net Torque rotates it.</p>
     
-    <table class="concept-table">
-        <tr>
-            <th>Angle ($\theta$)</th>
-            <th>Torque ($\tau = pE\sin\theta$)</th>
-            <th>Potential Energy ($U = -pE\cos\theta$)</th>
-            <th>State</th>
-        </tr>
-        <tr>
-            <td><strong>0° (Parallel)</strong></td>
-            <td>0 (Min)</td>
-            <td>$-pE$ (Min)</td>
-            <td><strong>Stable Equilibrium</strong></td>
-        </tr>
-        <tr>
-            <td><strong>90° (Perpendicular)</strong></td>
-            <td>$pE$ (Maximum)</td>
-            <td>0</td>
-            <td>Max Torque</td>
-        </tr>
-        <tr>
-            <td><strong>180° (Anti-Parallel)</strong></td>
-            <td>0 (Min)</td>
-            <td>$+pE$ (Max)</td>
-            <td><strong>Unstable Equilibrium</strong></td>
-        </tr>
-    </table>
+    <div class="table-wrapper">
+        <table class="concept-table">
+            <tr>
+                <th>Angle ($\theta$)</th>
+                <th>Torque ($\tau = pE\sin\theta$)</th>
+                <th>Potential Energy ($U = -pE\cos\theta$)</th>
+                <th>State</th>
+            </tr>
+            <tr>
+                <td><strong>0° (Parallel)</strong></td>
+                <td>0 (Min)</td>
+                <td>$-pE$ (Min)</td>
+                <td><strong>Stable Equilibrium</strong></td>
+            </tr>
+            <tr>
+                <td><strong>90° (Perpendicular)</strong></td>
+                <td>$pE$ (Maximum)</td>
+                <td>0</td>
+                <td>Max Torque</td>
+            </tr>
+            <tr>
+                <td><strong>180° (Anti-Parallel)</strong></td>
+                <td>0 (Min)</td>
+                <td>$+pE$ (Max)</td>
+                <td><strong>Unstable Equilibrium</strong></td>
+            </tr>
+        </table>
+    </div>
 
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
     <h2 style="color:var(--primary)">5. Electric Flux & Gauss Law</h2>
@@ -349,7 +373,7 @@
     <hr style="border:0; border-top:1px solid var(--border); margin: 40px 0;">
     <h2 style="color:#D32F2F"><i class="ri-safe-2-line"></i> The Formula Vault</h2>
 
-    <div style="overflow-x:auto;">
+    <div class="table-wrapper">
         <table class="formula-table">
             <thead>
                 <tr>
