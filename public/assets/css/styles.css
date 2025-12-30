@@ -17,12 +17,12 @@
     --border: #333333;
 }
 
-/* Global Reset to Prevent Overflow */
+/* GLOBAL RESET - PREVENTS SIDEWAYS SCROLLING */
 * { box-sizing: border-box; }
 html, body {
     margin: 0; padding: 0;
     width: 100%; max-width: 100vw;
-    overflow-x: hidden; /* CRITICAL FIX */
+    overflow-x: hidden; /* This stops the page from zooming out/moving sideways */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-main);
     color: var(--text-main);
@@ -30,12 +30,8 @@ html, body {
 }
 
 .container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    /* Ensure no child pushes this wider */
-    overflow-x: hidden; 
+    width: 100%; max-width: 800px;
+    margin: 0 auto; padding: 20px;
 }
 
 /* Navbar */
@@ -55,20 +51,6 @@ h1 { font-size: 1.8rem; }
 h2 { font-size: 1.4rem; }
 p, li { font-size: 1rem; margin-bottom: 10px; }
 
-/* Images & Objects - Prevent Overflow */
-img, video, canvas, svg {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Formulas (MathJax) - Force Scroll */
-mjx-container {
-    overflow-x: auto;
-    overflow-y: hidden;
-    max-width: 100%;
-    display: block !important;
-}
-
 /* Buttons */
 .btn-big {
     display: block; width: 100%;
@@ -78,14 +60,8 @@ mjx-container {
     border-radius: 12px;
     text-align: left; font-weight: bold;
     color: var(--text-main); text-decoration: none;
-    transition: transform 0.1s;
 }
-.btn-big:active { transform: scale(0.98); }
 .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-/* Progress Bar */
-.progress-wrapper { background: var(--border); height: 8px; border-radius: 4px; overflow: hidden; }
-.progress-fill { background: var(--primary); height: 100%; width: 0%; transition: width 0.5s; }
 
 /* Chapter Link Styles */
 .topic-check {
